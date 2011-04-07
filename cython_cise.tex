@@ -35,10 +35,14 @@
 
 
 % Include hyperref last.
-\RequirePackage[colorlinks,breaklinks,
+\RequirePackage[colorlinks,breaklinks,pdftex,
                 linkcolor=InnerLinkColor,filecolor=OuterLinkColor,
                 menucolor=OuterLinkColor,urlcolor=OuterLinkColor,
-                citecolor=InnerLinkColor]{hyperref}
+                citecolor=InnerLinkColor,
+                pdfauthor={Stefan Behnel, Robert Bradshaw, Craig Citro, Lisandro Dalcin, Dag Sverre Seljebotn, Kurt Smith},
+                pdftitle={Cython: The best of both worlds},
+                pdfkeywords={Cython language, Cython compiler, Cython programming, NumPy}
+]{hyperref}
 
 \usepackage{cise-like}
 \usepackage{enumitem}
@@ -322,7 +326,7 @@ wraps the iterable in a counter:
 f = open('a_file.txt')
 for line_no, line in enumerate(f):
     # prepend line number to line
-    print("\%d: \%s" \% (line_no, line))
+    print("%d: %s" % (line_no, line))
 \end{verbatim}
 
 Cython knows this pattern, too, and reduces the wrapping of the
